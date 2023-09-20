@@ -1,10 +1,12 @@
 import TelegramBotApi from "node-telegram-bot-api";
 import express from "express";
 import cors from "cors";
-import "dotenv/config";
+import dotenv from "dotenv";
 
-const TOKEN = process.TOKEN;
-const WEB_URL = process.WEB_URL;
+dotenv.config();
+
+const TOKEN = process.env.TOKEN;
+const WEB_URL = process.env.WEB_URL;
 const PORT = 8000;
 
 const bot = new TelegramBotApi(TOKEN, { polling: true });
