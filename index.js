@@ -22,7 +22,7 @@ bot.setChatMenuButton({
 });
 
 bot.getChatMenuButton().then((res) => {
-  console.log("ChatMenuButton ", res);
+  console.log("ChatMenuButton", res);
 });
 
 bot.addListener("web_app_data", (message) => {
