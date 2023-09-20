@@ -1,10 +1,10 @@
 import TelegramBotApi from "node-telegram-bot-api";
 import express from "express";
 import cors from "cors";
+import "dotenv/config";
 
-const TOKEN = "5221230117:AAEUwwsLHNSvsqzT1B4KNtGJuXQOO0lg5CQ";
-const WEB_URL =
-  "https://650ae4ffb317204f3b55a448--glowing-speculoos-3685c2.netlify.app";
+const TOKEN = process.TOKEN;
+const WEB_URL = process.WEB_URL;
 const PORT = 8000;
 
 const bot = new TelegramBotApi(TOKEN, { polling: true });
