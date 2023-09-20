@@ -7,7 +7,7 @@ dotenv.config();
 
 const TOKEN = process.env.TOKEN;
 const WEB_URL = process.env.WEB_URL;
-const PORT = 8000;
+const PORT = process.env.PORT;
 
 const bot = new TelegramBotApi(TOKEN, { polling: true });
 const app = express();
