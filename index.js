@@ -3,7 +3,8 @@ import express from "express";
 import cors from "cors";
 
 const TOKEN = "5221230117:AAEUwwsLHNSvsqzT1B4KNtGJuXQOO0lg5CQ";
-const WEB_URL = "https://f2e0-91-192-182-24.eu.ngrok.io";
+const WEB_URL =
+  "https://650ae4ffb317204f3b55a448--glowing-speculoos-3685c2.netlify.app";
 const PORT = 8000;
 
 const bot = new TelegramBotApi(TOKEN, { polling: true });
@@ -12,29 +13,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-bot.on("message", async (message) => {
-  bot.sendMessage(message.from.id, "<b>koliavtnk</b> \n Mykola Vatamaniuk", {
-    parse_mode: "HTML",
-    reply_markup: {
-      inline_keyboard: [
-        [
-          {
-            text: "Go to profile",
-            web_app: {
-              url: `${WEB_URL}/user/koliavtmnk`,
-            },
-          },
-          { text: "Check stories", callback_data: "2" },
-        ],
-      ],
-    },
-  });
-});
-
 bot.setChatMenuButton({
   menu_button: JSON.stringify({
     type: "web_app",
-    text: "Start App",
+    text: "Start",
     web_app: { url: WEB_URL },
   }),
 });
