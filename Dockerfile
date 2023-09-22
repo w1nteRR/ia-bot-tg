@@ -1,6 +1,6 @@
 FROM node:12-slim
 
-WORKDIR /usr/src/index
+WORKDIR /usr/dist
 
 COPY package*.json ./
 
@@ -12,7 +12,7 @@ RUN yarn install
 COPY . ./
 
 # Build the application
-RUN npm run
+RUN npm build
 
 # Run the web service on container startup.
 CMD [ "npm", "run", "start" ]
