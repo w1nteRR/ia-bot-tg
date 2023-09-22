@@ -1,4 +1,4 @@
-FROM node:12-slim
+FROM node:18.18.0
 
 WORKDIR /usr/dist
 
