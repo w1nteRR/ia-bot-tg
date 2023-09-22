@@ -12,7 +12,7 @@ RUN yarn install
 COPY . ./
 
 # Build the application
-RUN npm build
+RUN npm run build
 
 # Run the web service on container startup.
 CMD [ "npm", "run", "start" ]
