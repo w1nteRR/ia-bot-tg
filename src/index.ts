@@ -7,12 +7,7 @@ import { Bot } from "./bot";
 dotenv.config();
 
 const environment = process.env.NODE_ENV || "development";
-
-const env = dotenv.config({ path: `.env.${environment}` });
-
-if (env.error) {
-  throw new Error(`Failed to load .env.${environment} file`);
-}
+dotenv.config({ path: `.env.${environment}` });
 
 const WEB_URL = process.env.WEB_URL;
 const PORT = process.env.PORT;
