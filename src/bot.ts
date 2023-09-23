@@ -10,13 +10,14 @@ export class Bot implements IBot {
 
   public initializeWebApp(url: string) {
     this.bot.setChatMenuButton({
-      menu_button: {
+      //@ts-ignore
+      menu_button: JSON.stringify({
         type: "web_app",
-        text: "Run Bot",
+        text: "Start Bot",
         web_app: {
           url,
         },
-      },
+      }),
     });
   }
 }
