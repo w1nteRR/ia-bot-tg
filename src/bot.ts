@@ -13,7 +13,7 @@ export class Bot implements IBot {
       //@ts-ignore
       menu_button: JSON.stringify({
         type: "web_app",
-        text: "Run",
+        text: "Run Bot",
         web_app: {
           url,
         },
