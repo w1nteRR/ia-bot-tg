@@ -32,7 +32,9 @@ export class PaymentsService implements IPayments {
 
       const { payment_verification } = await response.json() as {payment_verification: boolean}
 
-      console.log('RESPONSE', response.json())
+      const verificationResponse = await response.json()
+
+      console.log('RESPONSE', verificationResponse)
 
       await this.bot.answerPreCheckoutQuery(query.id, payment_verification, { error_message: 'You are already subscriber. Please contact support.' });
     } catch (error) {
