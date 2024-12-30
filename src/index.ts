@@ -6,14 +6,16 @@ import { AppConfig } from "./env";
 
 const config = new AppConfig();
 
-const app = express();
+export const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-const bot = new Bot(config.telegramToken);
+const bot = new Bot(true);
+
 bot.initializeWebApp(config.webUrl);
 
 app.listen(config.port, () => {
-  console.log(`App listening on port ${config.port}`);
+  bot.listeners()
+  console.log(`App listening on port ${config.port} ${config.webUrl}`);
 });
