@@ -18,6 +18,8 @@ export class PaymentsService implements IPayments {
       }
     }
 
+    console.log('PRE_CHECKOUT_QUERY', body)
+
     try {
 
       const response = await fetch(`${config.paymentsUrl}/check-payment`, {
@@ -29,6 +31,8 @@ export class PaymentsService implements IPayments {
       })
 
       const { payment_verification } = await response.json() as {payment_verification: boolean}
+
+      console.log('RESPONSE', response.json())
 
       await this.bot.answerPreCheckoutQuery(query.id, payment_verification, { error_message: 'You are already subscriber. Please contact support.' });
     } catch (error) {
